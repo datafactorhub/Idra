@@ -44,8 +44,8 @@ services :
                 idra_main:
     deep:
             image: idraopendata/deep:2.0.0
-            #ports:
-                #- 80:80
+            ports:
+                - 80:80
             volumes:
                 - ./deep/configuration.js:/var/www/app/deep/deep-components/configuration.js
             networks:
