@@ -20,8 +20,8 @@ services :
     db:
             image: mysql:5.7
             restart: always
-            ports:
-                - 3306:3306
+            #ports:
+                #- 3306:3306
             volumes:
                 - ./opt/idra/mysql-data:/var/lib/mysql
                 - ../idra_db.sql:/docker-entrypoint-initdb.d/idra_db.sql
@@ -34,8 +34,8 @@ services :
             command: --default-authentication-plugin=mysql_native_password --lower_case_table_names=1
     rdf4j:
             image: yyz1989/rdf4j
-            ports:
-                - 8081:8080
+            #ports:
+                #- 8081:8080
             volumes:
                 - ./opt/idra/rdf4j-data:/opt/rdf4j/data
             environment:
@@ -44,8 +44,8 @@ services :
                 idra_main:
     deep:
             image: idraopendata/deep:2.0.0
-            ports:
-                - 80:80
+            #ports:
+                #- 80:80
             volumes:
                 - ./deep/configuration.js:/var/www/app/deep/deep-components/configuration.js
             networks:
