@@ -23,7 +23,7 @@ services :
             #ports:
                 #- 3306:3306
             volumes:
-                - ./opt/idra/mysql-data:/var/lib/mysql
+                - mysql-data:/var/lib/mysql
                 - ../idra_db.sql:/docker-entrypoint-initdb.d/idra_db.sql
             networks:
                 idra_main:
@@ -37,7 +37,7 @@ services :
             #ports:
                 #- 8081:8080
             volumes:
-                - ./opt/idra/rdf4j-data:/opt/rdf4j/data
+                - rdf4j-data:/opt/rdf4j/data
             environment:
                 - RDF4J_DATA=/opt/rdf4j/data
             networks:
@@ -106,3 +106,7 @@ networks:
 secrets:
   my_secret_data:
     file: ../secrets.txt
+
+volumes:
+  mysql-data:
+  rdf4j-data:
