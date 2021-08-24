@@ -94,7 +94,7 @@ services :
             secrets:
                 - my_secret_data           
             volumes:
-                - ./opt/idra/dump:/opt/idra/dump
+                - idra-dump:/opt/idra/dump
                 - /dev/urandom:/dev/random
             networks:
                 idra_main:
@@ -110,3 +110,4 @@ secrets:
 volumes:
   mysql-data:
   rdf4j-data:
+  idra-dump:
